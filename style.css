@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("1.jpg") no-repeat center center/cover;
+  overflow: hidden;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top: 4px solid #00c6ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+.login-container {
+  padding: 30px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  color: #fff;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+.form-control {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.form-control:focus {
+  background: rgba(255,255,255,0.15);
+  border-color: #00c6ff;
+  box-shadow: 0 0 10px #00c6ff;
+  color: #fff;
+}
+
+.btn-glow {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-glow-green {
+  background: linear-gradient(135deg, #00f5a0, #00d9f5);
+  border: none;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-outline-glow {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typing 3s steps(30) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+.password-box {
+  position: relative;
+}
+
+.password-box span {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+}
+
+
+#formMessage {
+  margin-bottom: 10px;
+}
+
+.form-msg {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease;
+}
+
+.form-msg.success {
+  background: rgba(0, 200, 100, 0.2);
+  border: 1px solid rgba(0, 255, 150, 0.4);
+}
+
+.form-msg.danger {
+  background: rgba(255, 0, 80, 0.2);
+  border: 1px solid rgba(255, 80, 120, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
